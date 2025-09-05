@@ -1,0 +1,226 @@
+/*
+  1. ОСНОВНІ СТИЛІ: ФОН, ШРИФТИ ТА ПАРАМЕТРИ
+  Визначаємо кольорову схему та базові налаштування
+*/
+
+:root {
+  --cyber-dark: #0a0a0d;
+  --neon-blue: #00e0ff;
+  --neon-pink: #ff007f;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --text-color: #f0f0f0;
+  --muted-text: #a0a0a0;
+  --pill-bg: rgba(0, 224, 255, 0.1);
+  --pill-border: rgba(0, 224, 255, 0.3);
+  --pill-text: #fff;
+  --chip-bg: rgba(255, 0, 127, 0.1);
+  --chip-border: rgba(255, 0, 127, 0.3);
+  --chip-text: #fff;
+}
+
+body {
+  font-family: 'Orbitron', sans-serif; /* Футуристичний шрифт */
+  background-color: var(--cyber-dark);
+  color: var(--text-color);
+  margin: 0;
+  padding: 40px 20px;
+  line-height: 1.6;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="2" height="2" viewBox="0 0 2 2"><path d="M0,0H1V1H0ZM1,1H2V2H1Z" fill="%231a1a1a" opacity="0.1" /></svg>');
+}
+
+.wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/*
+  2. ГЕНЕРАЛЬНІ ЕЛЕМЕНТИ
+  Стилі для заголовків, посилань, списків
+*/
+h1 {
+  font-size: 3em;
+  margin-bottom: 0.2em;
+  color: #fff;
+  text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+}
+
+h2 {
+  font-size: 1.8em;
+  border-bottom: 1px solid var(--neon-blue);
+  padding-bottom: 5px;
+  margin-top: 30px;
+  color: var(--neon-blue);
+  text-shadow: 0 0 5px var(--neon-blue);
+}
+
+h3 {
+  color: var(--neon-pink);
+  margin-bottom: 5px;
+}
+
+a {
+  color: var(--neon-pink);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--neon-pink);
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--neon-blue);
+  border-bottom: 1px solid var(--neon-blue);
+}
+
+.muted {
+  color: var(--muted-text);
+  font-style: italic;
+}
+
+.bullets {
+  list-style-type: '⚡️ '; /* Стилізуємо маркери списку */
+  padding-left: 20px;
+}
+
+.bullets li {
+  margin-bottom: 8px;
+}
+
+/*
+  3. СЕКЦІЇ РЕЗЮМЕ
+  Впроваджуємо ефект "рідкого скла"
+*/
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 0 20px rgba(0, 224, 255, 0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.section {
+  margin-top: 40px;
+}
+
+/*
+  4. СТИЛІ ДЛЯ "ЧІПІВ" ТА "ПІЛС"
+  Декоративні елементи з неоновим світінням
+*/
+
+.chips, .pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.chip {
+  background-color: var(--chip-bg);
+  border: 1px solid var(--chip-border);
+  color: var(--chip-text);
+  padding: 6px 12px;
+  border-radius: 20px;
+  box-shadow: 0 0 8px rgba(255, 0, 127, 0.4);
+  font-size: 0.85em;
+}
+
+.pill {
+  background-color: var(--pill-bg);
+  border: 1px solid var(--pill-border);
+  color: var(--pill-text);
+  padding: 6px 12px;
+  border-radius: 20px;
+  box-shadow: 0 0 8px rgba(0, 224, 255, 0.4);
+  font-size: 0.85em;
+}
+
+/*
+  5. СТИЛІ ДЛЯ ДОСВІДУ ТА МЕТРИК
+  Оформлення кожного блоку досвіду
+*/
+
+.item {
+  background: var(--glass-bg);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-left: 3px solid var(--neon-pink);
+  border-radius: 5px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(255, 0, 127, 0.1);
+}
+
+.when {
+  color: var(--muted-text);
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+.metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.metric {
+  background: rgba(0, 224, 255, 0.1);
+  border: 1px solid rgba(0, 224, 255, 0.2);
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+/*
+  6. СТИЛІ ДЛЯ ДВОХ КОЛОНОК І FOOTER
+*/
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.8em;
+  color: var(--muted-text);
+}
+
+/*
+  7. АНІМАЦІЇ
+*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
