@@ -240,7 +240,7 @@ footer {
 }
 
 #toasty-image {
-  width: 150px; /* Розмір зображення */
+  width: 300px; /* Розмір зображення */
   height: auto;
   border-radius: 50%; /* Для круглого обличчя, якщо потрібно */
   box-shadow: 0 0 20px rgba(255, 255, 0, 0.7); /* Жовте світіння */
