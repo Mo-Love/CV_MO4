@@ -225,23 +225,3 @@ footer {
   }
 }
 
-#toasty-container {
-  position: fixed; /* Щоб зображення з'являлося поверх усього */
-  bottom: 40px;
-  right: 40px;
-  z-index: 1000;
-  opacity: 0; /* Приховуємо за замовчуванням */
-  pointer-events: none; /* Щоб не блокувати кліки */
-  transition: opacity 0.3s ease-in-out;
-}
-
-#toasty-container.show {
-  opacity: 1; /* Показуємо */
-}
-
-#toasty-image {
-  width: 300px; /* Розмір зображення */
-  height: auto;
-  border-radius: 25%; /* Для круглого обличчя, якщо потрібно */
-  box-shadow: 0 0 20px rgba(255, 255, 0, 0.7); /* Жовте світіння */
-}
